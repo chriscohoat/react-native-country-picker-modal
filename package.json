@@ -1,6 +1,6 @@
 {
   "name": "react-native-country-picker-modal",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Country picker",
   "main": "src/CountryPicker.js",
   "repository": {
@@ -60,11 +60,5 @@
     "react": "16.0.0",
     "react-native": "0.50.3",
     "react-test-renderer": "16.0.0"
-  },
-  "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/"
-    ]
   }
 }

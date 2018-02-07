@@ -63,7 +63,8 @@ export default class CountryPicker extends Component {
     filterPlaceholderTextColor: PropTypes.string,
     closeButtonImage: PropTypes.element,
     transparent: PropTypes.bool,
-    animationType: PropTypes.oneOf(['slide', 'fade', 'none'])
+    animationType: PropTypes.oneOf(['slide', 'fade', 'none']),
+    accessible: PropTypes.bool
   }
 
   static defaultProps = {
@@ -73,7 +74,8 @@ export default class CountryPicker extends Component {
     filterPlaceholder: 'Filter',
     autoFocusFilter: true,
     transparent: false,
-    animationType: 'none'
+    animationType: 'none',
+    accessible: true
   }
 
   static renderEmojiFlag(cca2, emojiStyle) {
@@ -278,6 +280,8 @@ export default class CountryPicker extends Component {
         key={index}
         onPress={() => this.onSelectCountry(country)}
         activeOpacity={0.99}
+        accessible={this.props.accessible}
+        accessibilityLabel={country}
       >
         {this.renderCountryDetail(country)}
       </TouchableOpacity>
@@ -290,6 +294,8 @@ export default class CountryPicker extends Component {
         key={index}
         onPress={() => this.scrollTo(letter)}
         activeOpacity={0.6}
+        accessible={this.props.accessible}
+        accessibilityLabel={letter}
       >
         <View style={styles.letter}>
           <Text style={styles.letterText}>{letter}</Text>
@@ -317,6 +323,8 @@ export default class CountryPicker extends Component {
           disabled={this.props.disabled}
           onPress={() => this.setState({ modalVisible: true })}
           activeOpacity={0.7}
+          accessible={this.props.accessible}
+          accessibilityLabel={'Tap to choose your country'}
         >
           {this.props.children ? (
             this.props.children
