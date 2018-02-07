@@ -281,7 +281,7 @@ export default class CountryPicker extends Component {
         onPress={() => this.onSelectCountry(country)}
         activeOpacity={0.99}
         accessible={this.props.accessible}
-        accessibilityLabel={country}
+        accessibilityLabel={this.getCountryName(countries[country])}
       >
         {this.renderCountryDetail(country)}
       </TouchableOpacity>
