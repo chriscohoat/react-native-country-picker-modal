@@ -379,10 +379,14 @@ export default class CountryPicker extends Component {
                   onLayout={({ nativeEvent: { layout: { y: offset } } }) =>
                     this.setVisibleListHeight(offset)
                   }
+                  accessible={this.props.accessible}
+                  accessibilityLabel={'Scroll here to select the first letter of your country'}
                 />
                 <ScrollView
                   contentContainerStyle={styles.letters}
                   keyboardShouldPersistTaps="always"
+                  accessible={this.props.accessible}
+                  accessibilityLabel={'Scroll here to select your country'}
                 >
                   {this.state.filter === '' &&
                     this.state.letters.map((letter, index) =>
