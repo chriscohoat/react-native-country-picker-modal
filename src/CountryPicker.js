@@ -295,7 +295,7 @@ export default class CountryPicker extends Component {
         onPress={() => this.scrollTo(letter)}
         activeOpacity={0.6}
         accessible={this.props.accessible}
-        accessibilityLabel={letter}
+        accessibilityLabel={`Countries that start with ${letter}`}
       >
         <View style={styles.letter}>
           <Text style={styles.letterText}>{letter}</Text>
